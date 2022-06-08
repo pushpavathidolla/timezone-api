@@ -21,7 +21,7 @@ pipeline {
         stage('Deploy API in Sandbox Environment') {
 				 steps {
 		    script{
-				 sh	"mvn clean deploy -DmuleDeploy -DskipTests -Dmule.version=4.4.0 -Danypoint.username=syalla_vasu -Danypoint.password=V@suma2020 -Denv=Sandbox -Dappname=sandbox-worldtimezone-api -Dbusiness=Medtronics -DvCore=Micro -Dworkers=1"
+				 sh	"mvn clean deploy -DmuleDeploy -DskipTests -Dmule.version=4.4.0 -Danypoint.username=syalla_vasu -Danypoint.password=V@suma2020 -Denv=UAT -Dappname=uat-worldtimezone-api -Dbusiness=Medtronics -DvCore=Micro -Dworkers=1"
 					}	              	               
                 }	
            }
