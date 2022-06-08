@@ -21,10 +21,8 @@ pipeline {
 				 steps {
 		    script{
 				 sh	"mvn clean deploy -DmuleDeploy -DskipTests -Dmule.version=4.4.0 -Danypoint.username=syalla_vasu -Danypoint.password=V@suma2020 -Denv=Sandbox -Dappname=sandbox-worldtimezone-api -Dbusiness=Medtronics -DvCore=Micro -Dworkers=1"
-					}	
-                  	               
+					}	              	               
                 }	
            }
 	    }
     }
-}
