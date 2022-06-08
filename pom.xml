@@ -72,6 +72,8 @@
 		</repository>
 	</repositories>
 
+
+
 	<pluginRepositories>
 		<pluginRepository>
 			<id>mulesoft-releases</id>
@@ -83,6 +85,4 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
-
-
 </project>
