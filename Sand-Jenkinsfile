@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+    tools {
+        maven "maven 3.6.3"
+    }
+	stages{
+        stage('Build') {
+            steps {
+                // Get source code from a GitHub repository
+                git 'https://github.com/vasuyalla/timezone-api.git'
+                // Run Maven on a Unix agent.
+                sh "mvn -Dmaven.test.failure.ignore=true clean package"
+            }
+        }
+         stage('Unit Test Application'){
+       steps{
+        sh "mvn clean test"
+      }
+    }
+        stage('Deploy API in Sandbox Environment') {
+				 steps {
+		    script{
+				 sh	"mvn clean deploy -DmuleDeploy -DskipTests -Dmule.version=4.4.0 -Danypoint.username=syalla_vasu -Danypoint.password=V@suma2020 -Denv=Sandbox -Dappname=sandbox-worldtimezone-api -Dbusiness=Medtronics -DvCore=Micro -Dworkers=1"
+					}	
+                  	               
+                }	
+           }
+	    }
+    }
+}
