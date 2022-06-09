@@ -18,7 +18,7 @@ pipeline {
         sh "mvn clean test"
       }
     }
-        stage('Deploy API in Sandbox Environment') {
+        stage('Deploy API in UAT Environment') {
 				 steps {
 		    script{
 				 sh	"mvn clean deploy -DmuleDeploy -DskipTests -Dmule.version=4.4.0 -Danypoint.username=syalla_vasu -Danypoint.password=V@suma2020 -Denv=UAT -Dappname=uat-worldtimezone-api -Dbusiness=Medtronics -DvCore=Micro -Dworkers=1"
