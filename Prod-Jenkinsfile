@@ -18,10 +18,10 @@ pipeline {
         sh "mvn clean test"
       }
     }
-        stage('Deploy API in UAT Environment') {
+        stage('Deploy API in Prod Environment') {
 				 steps {
 		    script{
-				 sh	"mvn clean deploy -DmuleDeploy -DskipTests -Dmule.version=4.4.0 -Danypoint.username=syalla_vasu -Danypoint.password=V@suma2020 -Denv=UAT -Dappname=uat-worldtimezone-api -Dbusiness=Medtronics -DvCore=Micro -Dworkers=1"
+				 sh	"mvn clean deploy -DmuleDeploy -DskipTests -Dmule.version=4.4.0 -Danypoint.username=syalla_vasu -Danypoint.password=V@suma2020 -Denv=Prod -Dappname=Prod-worldtimezone-api -Dbusiness=Medtronics -DvCore=Micro -Dworkers=1"
 					}	              	               
                 }	
            }
