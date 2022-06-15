@@ -38,9 +38,12 @@
 						<objectStoreV2>true</objectStoreV2>
 					</cloudHubDeployment>
 				</configuration>
+				
 			</plugin>
 		</plugins>
 	</build>
+
+
 
 	<dependencies>
 		<dependency>
@@ -69,9 +72,8 @@
 			<name>MuleSoft Releases Repository</name>
 			<url>https://repository.mulesoft.org/releases/</url>
 			<layout>default</layout>
-		</repository>
-	</repositories>
-
+		</repository>	
+		</repositories>
 	<pluginRepositories>
 		<pluginRepository>
 			<id>mulesoft-releases</id>
@@ -83,5 +85,6 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
-
 </project>
+
+
