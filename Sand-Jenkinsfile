@@ -17,11 +17,6 @@ pipeline {
        steps{
         sh "mvn clean test"
       }
-      post {
-                 always {
-                     jiraSendBuildInfo site: 'persistent-ibu.atlassian.net'
-                 }
-      }
     }
         stage('Deploy API in Sandbox Environment') {
 				 steps {
