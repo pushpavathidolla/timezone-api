@@ -14,7 +14,7 @@ pipeline {
             } 
 	    post {
                  always {
-                     jiraSendBuildInfo site: 'tibcoservicedesk.atlassian.net'
+                     jiraSendBuildInfo site: 'tibcoservicedesk.atlassian.net', branch: 'uat'
                  }
              }
 	  }
