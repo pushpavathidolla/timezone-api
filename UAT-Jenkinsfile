@@ -36,6 +36,18 @@ pipeline {
              }
 	    }
 	    }
+	    stage('JIRA') 
+           {
+        steps {
+		 script {
+		  echo "Creating Jira issue"
+          testIssue = [fields: [ project: [key: 'TEST'],summary: 'New JIRA Created from Jenkins.',description: 'New JIRA Created from Jenkins.',issuetype: [id: '10001']]]
+          response = jiraNewIssue issue: testIssue, site: 'Tibco-Demo'
+          echo response.successful.toString()
+          echo response.data.toString()
+          }
+		  }
+        }
 	    post {  
         success {  
           mail bcc: '', body: "<b>Build Success</b><br>Project: ${env.JOB_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br> URL: ${env.BUILD_URL}", cc: '', charset: 'UTF-8', from: '', mimeType: 'text/html', replyTo: '', subject: "Build Success: Project name -> ${env.JOB_NAME}", to: "syalla.vasu@gmail.com";
